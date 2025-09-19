@@ -3,6 +3,10 @@ while True:
     if p <= 0:
         print("Please enter a positive natural number")
     else:
-        np = p * ((1 + 0.04) ** 3)
-        print(f"The amount post three years ${np:,.2f}")
+        p = p * ((1 + 0.04) ** 1)
+        print(f"The amount post year one ${p:,.2f}")
+        p = p * ((1 + 0.04) ** 1)
+        print(f"The amount post year two ${p:,.2f}")
+        p = p * ((1 + 0.04) ** 1)
+        print(f"The amount post year three ${p:,.2f}")
         break
