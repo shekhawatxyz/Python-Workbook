@@ -5,8 +5,7 @@ l = []
 for i in range(37):
     l.append(str(i))
 l.append("00")
-
-print(random.choice(l))
+r = random.choice(l)
 red = [
     "1",
     "3",
@@ -27,3 +26,27 @@ red = [
     "34",
     "36",
 ]
+print(f"The spin resulted in {r}...")
+print(f"Pay {r}")
+if r in red:
+    print(f"Pay Red")
+    if int(r) % 2 == 0:
+        print(f"Pay Even")
+    else:
+        print(f"Pay Odd")
+    if int(r) in range(1, 19):
+        print("Pay 1 to 18")
+    else:
+        print("Pay 19 to 36")
+elif r == "0" or r == "00":
+    pass
+else:
+    print(f"Pay Black")
+    if int(r) % 2 == 0:
+        print(f"Pay Even")
+    else:
+        print(f"Pay Odd")
+    if int(r) in range(1, 19):
+        print("Pay 1 to 18")
+    else:
+        print("Pay 19 to 36")
