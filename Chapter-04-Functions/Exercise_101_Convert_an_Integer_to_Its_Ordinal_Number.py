@@ -19,6 +19,7 @@ def ordinal(a):
 
 def main():
     a = int(input("Enter a number between 1 and 12: "))
+
     print(ordinal(a))
 
 
