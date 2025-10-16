@@ -16,50 +16,43 @@ def gregorianDate(a):
             return f
 
 
-# def main():
-#     # a = int(input("Enter the ordinal date: "))
-#     a = "2024061"
-#     return gregorianDate(a)
+def check_date(time, extra):
+    time = str(time)
+    year = time[0:4]
+    y = int(year)
+    date = time[4:]
+    d = int(date)
+    new_d = d + extra
 
-
-# b = main()
-b = gregorianDate("2024061")
-print(len(b))
-time = "2024367"
-print(time)
-year = time[0:4]
-print(year)
-y = int(year)
-date = time[4:]
-d = int(date)
-print(d)
-extra = 300
-new_d = d + extra
-print(new_d)
-
-while True:
-    if calendar.isleap(y):
-        if new_d > 366:
-            new_d -= 366
-            y += 1
-            continue
+    while True:
+        if calendar.isleap(y):
+            if new_d > 366:
+                new_d -= 366
+                y += 1
+                continue
+            else:
+                f = f"{y}{new_d:03d}"
+                return f
         else:
-            print(f"leap year loop")
-            print(f"{y}{new_d}")
-            break
-    else:
-        if new_d > 365:
-            new_d -= 365
-            y += 1
-            continue
-        else:
-            print("non leap year loop")
-            print(f"{y}{new_d}")
-            break
+            if new_d > 365:
+                new_d -= 365
+                y += 1
+                continue
+            else:
+                f = f"{y}{new_d:03d}"
+                return f
 
 
-print(type(b))
-# print(type(nd))
+a = input("Enter the ordinal date: ")
+b = gregorianDate(a)
+print(f"So {b} in gregorian terms")
+# a1 = input("Enter the year: ")
+# a2 = input("Enter the month: ")
+# a3 = input("Enter the day: ")
+# b = ordinalDate(int(a1), int(a2), int(a3))
+# print(b)
+e = input("Enter the extra time: ")
+new_o = check_date(str(a), int(e))
 
-# print(gregorianDate(nd))
-# ordinalDate()
+new_g = gregorianDate(new_o)
+print(f"The new date in gregorian terms is {new_g}")
